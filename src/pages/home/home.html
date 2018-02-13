@@ -1,37 +1,52 @@
-<div *ngIf="!optionsLabels">
-    unable to get database
+<div class="image-title">
+    <img src="../../assets/imgs/title.png">
 </div>
 
-<div *ngIf="optionsLabels">
-    <div *ngFor="let option of optionsLabels">
-        <ion-item>
-            <ion-label>{{option}}</ion-label>
-            <ion-select [(ngModel)]="optionsValues[option]" 
-            (ngModelChange)="handleOption(option,$event)" 
-            [disabled]="optionsValues[option]!==''">
-                <ion-option *ngFor="let value of selectValues[option]" 
-                value="{{value}}" >
-                    {{value}}
-                </ion-option>
-            </ion-select>
-        </ion-item>
+<div class="center-menu">
+
+    <div *ngIf="!optionsLabels">
+        <ion-card-content>
+            <ion-card-title>
+                Unable to get database
+            </ion-card-title>
+        </ion-card-content>
+    </div>
+    
+    <div *ngIf="optionsLabels" class="menu-element">
+        <div class="select-list">
+            <div *ngFor="let option of optionsLabels">
+                <ion-item>
+                    <ion-label>{{option}}</ion-label>
+                    <ion-select [(ngModel)]="optionsValues[option]" 
+                    (ngModelChange)="handleOption(option,$event)" 
+                    [disabled]="optionsValues[option]!==''">
+                        <ion-option *ngFor="let value of selectValues[option]" 
+                        value="{{value}}" >
+                            {{value}}
+                        </ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="finalVehiclePicture" class="menu-element">
+        <ion-card>
+            <img [src]="finalVehiclePicture"/>
+            <ion-card-content>
+                <div *ngFor="let option of optionsLabels">
+                    <ion-card-title *ngIf="optionsValues[option]">
+                        {{option}}
+                    </ion-card-title>
+                    <p *ngIf="optionsValues[option]">
+                        {{optionsValues[option]}}
+                    </p>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    
+    <div class="restart-button">
+        <button ion-button full (click)="restart()">Restart</button>
     </div>
 </div>
-
-<div *ngIf="finalVehiclePicture">
-    <ion-card>
-        <img [src]="finalVehiclePicture"/>
-        <ion-card-content>
-            <div *ngFor="let option of optionsLabels">
-                <ion-card-title *ngIf="optionsValues[option]">
-                    {{option}}
-                </ion-card-title>
-                <p *ngIf="optionsValues[option]">
-                    {{optionsValues[option]}}
-                </p>
-            </div>
-        </ion-card-content>
-    </ion-card>
-</div>
-
-<button ion-button full (click)="restart()">Restart</button>

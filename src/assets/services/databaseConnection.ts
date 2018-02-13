@@ -20,13 +20,16 @@ export class databaseConnection {
   static getOptions(): Array<string> {
     let options:Array<string> = [];
     let execeptions:Array<String> = ['id','img'];
-    const data = this.database[0];
-    Object.keys(data).forEach(option=>{
-      if(!execeptions.includes(option)){
-        options.push(option);
-      }
-    });
-    return options;
+    console.info(this.database);
+    if(this.database){
+      const data = this.database[0];
+      Object.keys(data).forEach(option=>{
+        if(!execeptions.includes(option)){
+          options.push(option);
+        }
+      });
+      return options;
+    }
   }
 
   static getOptionsValues(values): any {
