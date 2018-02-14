@@ -45,7 +45,7 @@ npm run test
 ### View testing
 * Usually I implement page/view components tests simulating a user.
 * To make this I use [nightmare.js](http://www.nightmarejs.org/).
-* Making this project I have discover a bug in Ionic and I couldn't find a way to solve before my deadline, but the bug has been reported to [Ionic forum](https://forum.ionicframework.com/t/jquery-events-can-not-be-triggered-till-first-manual-click/121520). 
+* Making this project I have discovered a bug in Ionic and I couldn't find a way to solve before my deadline, but the bug has been reported to [Ionic forum](https://forum.ionicframework.com/t/jquery-events-can-not-be-triggered-till-first-manual-click/121520). 
 
 ### Design + CSS
 * Design has been implementing following material UI interface (ionic).
