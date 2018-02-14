@@ -20,7 +20,6 @@ export class databaseConnection {
   static getOptions(): Array<string> {
     let options:Array<string> = [];
     let execeptions:Array<String> = ['id','img'];
-    console.info(this.database);
     if(this.database){
       const data = this.database[0];
       Object.keys(data).forEach(option=>{

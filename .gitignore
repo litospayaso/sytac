@@ -2,7 +2,9 @@
 /dist/
 /app/lib/
 /platforms/
+/platform/
 /plugins/
+/prepare/
 /www/
 exportar.sh
 npm-debug.log

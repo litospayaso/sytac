@@ -38,7 +38,7 @@ export class HomePage {
 
   restart(){
     this.selectValues = {};
-    this.optionsLabels = null;
+    this.optionsLabels = [];
     this.optionsValues = {};
     this.finalVehiclePicture = "";
     let loader = this.loadingCtrl.create({
@@ -49,6 +49,8 @@ export class HomePage {
       loader.dismiss();
       if(data){
         this.initOptions();
+      }else{
+        this.optionsLabels = null;
       }
     });
   }
