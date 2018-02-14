@@ -18,6 +18,10 @@ export class HomePage {
     this.restart();
   }
 
+ /**
+ * @namespace homePage.initOptions
+ * @desc Initialize database (is mandatory to init before interact with database).
+ */
   initOptions(){
     this.optionsLabels = databaseConnection.getOptions();
     let values = {};
@@ -28,6 +32,10 @@ export class HomePage {
     this.selectValues = databaseConnection.getOptionsValues(values);
   }
 
+  /**
+   * @namespace homePage.handleOption
+   * @desc Handle the change in any select option.
+   */
   handleOption(){
     this.selectValues = databaseConnection.getOptionsValues(this.optionsValues);
     if(this.selectValues['img']){
@@ -36,6 +44,10 @@ export class HomePage {
     }
   }
 
+  /**
+   * @namespace homePage.restart
+   * @desc Restart all values and make a new database connection.
+   */
   restart(){
     this.selectValues = {};
     this.optionsLabels = [];
