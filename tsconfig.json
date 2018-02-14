@@ -8,7 +8,7 @@
       "dom",
       "es7"
     ],
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5"

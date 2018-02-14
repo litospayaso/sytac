@@ -50,7 +50,7 @@ static getOptions(): Array<string> {
     return this.database.filter(elem => {
       let includes = true;
       Object.keys(values).forEach(val=>{
-        includes = includes && (values[val] ? elem[val].includes(values[val]) : true);
+        includes = includes && (values[val] ? (elem[val] && elem[val].includes(values[val])) : true);
       });
       return includes;
     });
